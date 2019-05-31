@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title></title>
+    <link href="main.css" rel="stylesheet" type="text/css" />
+    
+  </head>
+  <body>
+    <div class="container">
+      <h1>Recipe Finder</h1>
+      <form id="js-form">
+        <div class="input-wrapper">
+          <label for="food-input">Search for a food or recipe</label>
+          <input type="text" name="food-input" id="js-food-input" placeholder="e.g., Pad Thai" required >
+        </div>
+        
+        <div class="input-wrapper">
+          <label for="max-results">Maximum Results</label>
+          <input type="number" name="max-results" id="js-max-results" value="3" required >
+        </div>
+        
+        <button type="submit">Submit</button>
+      </form>
+      <section class="results">
+        <div id="video-container"></div>
+        <ul id="recipe-list"></ul>
+        <ul id="article-list"></ul>
+        <p id="js-error-message" class="error-message"></p>
+      </section>
+    </div>
+    
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.js"
+      integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+      crossorigin="anonymous"></script>
+    <script src="index.js"></script>
+  </body>
+</html>
