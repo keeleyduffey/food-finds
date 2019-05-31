@@ -49,6 +49,42 @@ table {
 
 * {
   box-sizing: border-box;
-  font-family: 'Arial', sans-serif;
   font-size: 20px;
+}
+
+body {
+	font-family: sans-serif;
+}
+
+h1 {
+	font-size: 36px;
+}
+
+.container {
+	text-align: center;
+	padding: 50px;
+}
+
+form {
+	width: 100%;
+	margin: 3vh auto;
+	text-align: center;
+}
+
+.input-wrapper,
+button {
+	display: inline-block;
+}
+.input-wrapper label {
+	display: block;
+	text-align: left;
+}
+
+.results {
+	display: none;
+}
+
+.lists-wrapper {
+	display: flex;
+	flex-direction: row;
 }

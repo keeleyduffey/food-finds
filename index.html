@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width">
     <title></title>
     <link href="main.css" rel="stylesheet" type="text/css" />
+    <script src="https://developer.edamam.com/attribution/badge.js"></script>
     
   </head>
   <body>
@@ -17,7 +18,7 @@
         </div>
         
         <div class="input-wrapper">
-          <label for="max-results">Maximum Results</label>
+          <label for="max-results">Maximum Recipe Options</label>
           <input type="number" name="max-results" id="js-max-results" value="3" required >
         </div>
         
@@ -25,10 +26,13 @@
       </form>
       <section class="results">
         <div id="video-container"></div>
-        <ul id="recipe-list"></ul>
-        <ul id="article-list"></ul>
+        <div class="lists-wrapper">
+          <ul id="recipe-list"></ul>
+          <ul id="article-list"></ul>
+        </div>
         <p id="js-error-message" class="error-message"></p>
       </section>
+      <div id="edamam-badge" data-color="white"></div>
     </div>
     
     <script
