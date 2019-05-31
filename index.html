@@ -25,11 +25,11 @@
         <button type="submit">Submit</button>
       </form>
       <section class="results">
-        <div id="video-container"></div>
         <div class="lists-wrapper">
-          <ul id="recipe-list"></ul>
-          <ul id="article-list"></ul>
+          <ul id="recipe-list" class="results-list"></ul>
+          <ul id="article-list" class="results-list"></ul>
         </div>
+        <div id="video-container"></div>
         <p id="js-error-message" class="error-message"></p>
       </section>
       <div id="edamam-badge" data-color="white"></div>
@@ -40,5 +40,6 @@
       integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
       crossorigin="anonymous"></script>
     <script src="index.js"></script>
+    <script src="https://apis.google.com/js/client.js?onload=init"></script>
   </body>
 </html>

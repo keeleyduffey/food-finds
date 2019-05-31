@@ -88,3 +88,20 @@ button {
 	display: flex;
 	flex-direction: row;
 }
+
+.results-list {
+	padding: 20px;
+}
+
+.results-list a {
+	display: block;
+}
+
+#recipe-list {
+	width: 40%;
+}
+
+#article-list {
+	text-align: left;
+	width: 55%;
+}

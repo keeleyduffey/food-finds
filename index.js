@@ -45,7 +45,7 @@ function formatArticleRequest (foodToFind) {
 function formatVideoRequest (foodToFind) {
   const params = {
     key: videoApiKey,
-    q: foodToFind,
+    q: 'cooking '+foodToFind,
     part: 'snippet',
     order: 'rating',
     type: 'video',
@@ -58,7 +58,6 @@ function formatVideoRequest (foodToFind) {
 }
 
 function getResults (foodToFind, maxResults) {
-  // console.log(maxResults);
   const recipes = formatRecipeRequest(foodToFind, maxResults),
     articles = formatArticleRequest(foodToFind),
     video = formatVideoRequest(foodToFind);
@@ -66,7 +65,6 @@ function getResults (foodToFind, maxResults) {
 
 
 function createRecipeList (responses) {
-  // console.log(responses);
   return responses.map(response => `
     <li>
       <a href="${response.recipe.url}">${response.recipe.label}</a>
@@ -82,7 +80,6 @@ function displayRecipes (responseJSON) {
     $('.results').css('display','block');
   } else {
     const resultsList = createRecipeList(responseJSON.hits).join('<br>');
-    // console.log(resultsList);
     $('#recipe-list').html(`<ul>${resultsList}</ul>`);
     $('.results').css('display','block');
 
@@ -100,7 +97,6 @@ function createArticleList (responses) {
 }
 
 function displayArticles (responseJSON) {
-  // console.log(responseJSON.response);
   $('#article-list').empty();
   if (responseJSON.response.docs.length === 0) {
 
@@ -108,26 +104,28 @@ function displayArticles (responseJSON) {
     $('.results').css('display','block');
   } else {
     const resultsList = createArticleList(responseJSON.response.docs).join('<br>');
-    // console.log(resultsList);
     $('#article-list').html(`<ul>${resultsList}</ul>`);
     $('.results').css('display','block');
 
   }
 }
 
+
+function createVideoElement (videoId) {
+ return ` 
+    <iframe class="video w100" width="640" height="360" src="//www.youtube.com/embed/${videoId}" frameborder="0" allowfullscreen></iframe>`;
+}
+
 function displayVideo (responseJSON) {
-  console.log(responseJSON.items);
   $('#video-container').empty();
   const {items} = responseJSON;
-  console.log(items[0].snippet.thumbnails.medium.url);
   if (items.length === 0) {
 
     $('#video-container').html(`<p>No video found</p>`);
     $('.results').css('display','block');
   } else {
-    // const resultsList = createArticleList(responseJSON.response.docs).join('<br>');
-    // console.log(resultsList);
-    $('#article-list').html(`<video src="${items[0].snippet.thumbnails.medium.url}"></video>`);
+    const videoElement = createVideoElement(items[0].id.videoId);
+    $('#video-container').html(`<div class="item">${videoElement}</div>`);
     $('.results').css('display','block');
 
   }
