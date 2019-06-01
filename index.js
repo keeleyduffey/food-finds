@@ -110,10 +110,23 @@ function displayArticles (responseJSON) {
   }
 }
 
-
 function createVideoElement (videoId) {
  return ` 
-    <iframe class="video w100" width="640" height="360" src="//www.youtube.com/embed/${videoId}" frameborder="0" allowfullscreen></iframe>`;
+  <iframe id="existing-iframe-example"
+    width="640" height="360"
+    src="https://www.youtube.com/embed/${videoId}"
+    frameborder="0"></iframe>
+  `;
+}
+
+let player;
+function onYouTubeIframeAPIReady() {
+  player = new YT.Player('existing-iframe-example', {
+    events: {
+      'onReady': onPlayerReady,
+      'onStateChange': onPlayerStateChange
+    }
+  });
 }
 
 function displayVideo (responseJSON) {
