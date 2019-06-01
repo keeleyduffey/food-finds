@@ -82,6 +82,7 @@ button {
 
 .results {
 	display: none;
+	margin: 50px auto;
 }
 
 .lists-wrapper {
@@ -104,4 +105,8 @@ button {
 #article-list {
 	text-align: left;
 	width: 55%;
+}
+
+#edamam-badge {
+	margin: 20px auto;
 }

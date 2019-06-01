@@ -14,16 +14,19 @@
       <form id="js-form">
         <div class="input-wrapper">
           <label for="food-input">Search for a food or recipe</label>
-          <input type="text" name="food-input" id="js-food-input" placeholder="e.g., Pad Thai" required >
+          <input type="text" name="food-input" id="js-food-input" placeholder="e.g., Pad Thai" required>
         </div>
-        
         <div class="input-wrapper">
           <label for="max-results">Maximum Recipe Options</label>
           <input type="number" name="max-results" id="js-max-results" value="3" required >
         </div>
-        
         <button type="submit">Submit</button>
       </form>
+
+      <div>
+        <h2>How it works:</h2>
+        <p> Type a food or recipe name and receive a video, recipe options and a list of relevant New York Times articles</p>
+      </div>
 
       <section class="results">
         <div id="video-container"></div>

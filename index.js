@@ -65,6 +65,7 @@ function getResults (foodToFind, maxResults) {
 
 
 function createRecipeList (responses) {
+  console.log(responses);
   return responses.map(response => `
     <li>
       <a href="${response.recipe.url}">${response.recipe.label}</a>
