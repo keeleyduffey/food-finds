@@ -154,6 +154,15 @@ function submitForm() {
   });
 }
 
+function scrollToTop () {
+  $('.scroll-button').on('click', (event) => {
+    event.preventDefault();
+    $("html, body").animate({ scrollTop: 0 }, "slow");
+    
+  })
+}
+
 $(function() {
+  scrollToTop();
   submitForm();
 });
