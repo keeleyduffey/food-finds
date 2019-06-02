@@ -113,8 +113,7 @@ function displayArticles (responseJSON) {
 
 function createVideoElement (videoId) {
  return ` 
-  <iframe id="existing-iframe-example"
-    width="640" height="360"
+  <iframe id="video-iframe"
     src="https://www.youtube.com/embed/${videoId}"
     frameborder="0"></iframe>
   `;
@@ -122,7 +121,7 @@ function createVideoElement (videoId) {
 
 let player;
 function onYouTubeIframeAPIReady() {
-  player = new YT.Player('existing-iframe-example', {
+  player = new YT.Player('video-iframe', {
     events: {
       'onReady': onPlayerReady,
       'onStateChange': onPlayerStateChange

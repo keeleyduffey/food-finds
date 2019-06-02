@@ -71,13 +71,13 @@ form {
 	text-align: center;
 }
 
-.input-wrapper,
-button {
-	display: inline-block;
+iframe {
+	height: 240px;
+	width: 420px;
 }
+
 .input-wrapper label {
 	display: block;
-	text-align: left;
 }
 
 .results {
@@ -87,7 +87,7 @@ button {
 
 .lists-wrapper {
 	display: flex;
-	flex-direction: row;
+	flex-direction: column;
 }
 
 .results-list {
@@ -98,15 +98,40 @@ button {
 	display: block;
 }
 
-#recipe-list {
-	width: 40%;
-}
-
 #article-list {
 	text-align: left;
-	width: 55%;
 }
 
 #edamam-badge {
 	margin: 20px auto;
+}
+
+
+@media screen and (min-width: 850px) {
+	.lists-wrapper {
+		flex-direction: row;
+	}
+
+	#recipe-list {
+		width: 40%;
+	}
+
+	#article-list {
+		text-align: left;
+		width: 55%;
+	}
+
+	iframe {
+		height: 360px;
+		width: 640px;
+	}
+
+	.input-wrapper,
+	button {
+		display: inline-block;
+	}
+
+	.input-wrapper label {
+		text-align: left;
+	}
 }
