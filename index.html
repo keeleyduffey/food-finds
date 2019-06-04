@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
-    <title></title>
+    <title>Food Finds</title>
     <link href="main.css" rel="stylesheet" type="text/css" />
     <link href="https://fonts.googleapis.com/css?family=Lato:400,900|Lobster&display=swap" rel="stylesheet">
     <script src="https://developer.edamam.com/attribution/badge.js"></script>
@@ -13,15 +13,18 @@
     <!-- <div class="container"> -->
       <section class="intro-container">
         <div class="search-wrapper">
-          <h1>Food <br> Finds</h1>
+          <header>
+            <h1>Food <br> Finds</h1>
+          </header>
+         
           <form id="js-form">
             <div class="input-wrapper">
-              <label for="food-input">Search for a food or recipe</label>
-              <input type="text" name="food-input" id="js-food-input" placeholder="e.g., Pad Thai" required>
+              <label for="js-food-input">Search for a food or recipe</label>
+              <input type="text" name="js-food-input" id="js-food-input" placeholder="e.g., Pad Thai" required>
             </div>
             <div class="input-wrapper">
-              <label for="max-results">Number of Recipes</label>
-              <input type="number" name="max-results" id="js-max-results" value="3" required >
+              <label for="js-max-results">Number of Recipes</label>
+              <input type="number" name="js-max-results" id="js-max-results" value="3" required >
             </div>
             <button type="submit">Submit</button>
           </form>
