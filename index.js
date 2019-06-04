@@ -29,7 +29,7 @@ function formatRecipeRequest (foodToFind, maxResults) {
     q: foodToFind,
     app_id: recipeAppId,
     app_key: recipeApiKey,
-    to: maxResults
+    to: maxResults,
   };
   fetchRequest(params, recipeSearchURL, displayRecipes);
 }
@@ -62,16 +62,15 @@ function getResults (foodToFind, maxResults) {
     articles = formatArticleRequest(foodToFind),
     video = formatVideoRequest(foodToFind);
 
-  $("html, body").animate({ scrollTop: 1000 }, "slow");
+  $('html, body').animate({ scrollTop: 1000 }, 'slow');
 }
-
 
 function createRecipeList (responses) {
   return responses.map(response => `
     <li>
       <a href="${response.recipe.url}" target="_blank">
         <h4>${response.recipe.label}</h4>
-        <img src="${response.recipe.image}" />
+        <img src="${response.recipe.image}"  alt="${response.recipe.label} image" />
       </a>
     </li>`
   );
@@ -79,11 +78,12 @@ function createRecipeList (responses) {
 
 function displayRecipes (responseJSON) {
   $('#recipe-list').empty();
-  if (responseJSON.hits.length === 0) {
+  const { hits } = responseJSON;
+  if (hits.length === 0) {
     $('#recipe-list').html(`<ul><li>No results found</li></ul>`);
     $('.results').css('display','block');
   } else {
-    const resultsList = createRecipeList(responseJSON.hits).join('<br>');
+    const resultsList = createRecipeList(hits).join('<br>');
     $('#recipe-list').html(`<ul>${resultsList}</ul>`);
     $('.results').css('display','block');
 
@@ -91,25 +91,25 @@ function displayRecipes (responseJSON) {
 }
 
 function createArticleList (responses) {
-  console.log(responses);
    return responses.map(response => `
     <li>
       <a href="${response.web_url}" target="_blank">${response.headline.main}</a>
-      <p>${response.headline.kicker ? response.headline.kicker : ''}</p>
-      <p>${response.byline.original ? response.byline.original : ''}</p>
-      <p>${response.abstract ? response.abstract : ''}</p>
+      <p>${response.headline.kicker || ''}</p>
+      <p>${response.byline.original || ''}</p>
+      <p>${response.abstract || ''}</p>
     </li>`
   );
 }
 
 function displayArticles (responseJSON) {
   $('#article-list').empty();
-  if (responseJSON.response.docs.length === 0) {
+  const { docs } = responseJSON.response;
+  if (docs.length === 0) {
 
     $('#article-list').html(`<ul><li>No results found</li></ul>`);
     $('.results').css('display','block');
   } else {
-    const resultsList = createArticleList(responseJSON.response.docs).join('<br>');
+    const resultsList = createArticleList(docs).join('<br>');
     $('#article-list').html(`<ul>${resultsList}</ul>`);
     $('.results').css('display','block');
 
@@ -129,14 +129,14 @@ function onYouTubeIframeAPIReady() {
   player = new YT.Player('video-iframe', {
     events: {
       'onReady': onPlayerReady,
-      'onStateChange': onPlayerStateChange
+      'onStateChange': onPlayerStateChange,
     }
   });
 }
 
 function displayVideo (responseJSON) {
   $('#video-container').empty();
-  const {items} = responseJSON;
+  const { items } = responseJSON;
   if (items.length === 0) {
 
     $('#video-container').html(`<p>No video found</p>`);
@@ -153,9 +153,9 @@ function displayVideo (responseJSON) {
 function submitForm() {
   $('form').submit(event => {
     event.preventDefault();
-    const foodToFind = $('#js-food-input').val(),
-      maxResults = $('#js-max-results').val();
-    getResults(foodToFind, maxResults);
+    const $foodToFind = $('#js-food-input').val(),
+      $maxResults = $('#js-max-results').val();
+    getResults($foodToFind, $maxResults);
   });
 }
 
@@ -169,7 +169,6 @@ function resetForm () {
     scrollToTop();
     $('#js-food-input').val('');
     $('#js-max-results').val(3);
-    
   })
 }
 
