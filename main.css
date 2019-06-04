@@ -57,7 +57,6 @@ body {
 	font-family: 'Lato', sans-serif;
 }
 
-
 h1 {
 	font-size: 60px;
 	line-height: 76px;
@@ -112,13 +111,17 @@ h3 {
 	line-height: 25px;
 }
 
-.blue { color: #2F3F73 }	
-.color-primary-1 { color: #7A86AD }
-.light-blue { color: #505F90 }
-.dark-blue { color: #172556 }
-.darkest-blue { color: #07123A }
-/*light blue aebef0*/
+.blue {
+	color: #2F3F73
+}
 
+.light-blue {
+	color: #505F90
+}
+
+.darkest-blue {
+	color: #07123A
+}
 
 form {
 	width: 100%;
@@ -129,7 +132,6 @@ form {
 iframe {
 	height: 170px;
 	width: 300px;
-
 }
 
 .input-wrapper,
@@ -231,7 +233,6 @@ button:focus {
 	font-weight: 300;
 }
 
-
 @media screen and (min-width: 400px) {
 	h1 {
 		font-size: 90px;
@@ -284,9 +285,3 @@ button:focus {
 	}
 
 }
-
-/*@media screen and (min-width: 900px) {
-	.results-list.recipes {
-		width: 52%;
-	}
-}*/

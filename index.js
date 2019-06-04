@@ -61,7 +61,6 @@ function getResults (foodToFind, maxResults) {
   const recipes = formatRecipeRequest(foodToFind, maxResults),
     articles = formatArticleRequest(foodToFind),
     video = formatVideoRequest(foodToFind);
-
   $('html, body').animate({ scrollTop: 1000 }, 'slow');
 }
 
@@ -105,7 +104,6 @@ function displayArticles (responseJSON) {
   $('#article-list').empty();
   const { docs } = responseJSON.response;
   if (docs.length === 0) {
-
     $('#article-list').html(`<li>No results found</li>`);
     $('.results').css('display','block');
   } else {
@@ -139,16 +137,13 @@ function displayVideo (responseJSON) {
   $('#video-container').empty();
   const { items } = responseJSON;
   if (items.length === 0) {
-
     $('#video-container').html(`<p>No video found</p>`);
     $('.results').css('display','block');
   } else {
     const videoElement = createVideoElement(items[0].id.videoId);
     $('#video-container').html(`<div class="item">${videoElement}</div>`);
     $('.results').css('display','block');
-
   }
-
 }
 
 function submitForm() {
