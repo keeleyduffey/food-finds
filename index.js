@@ -80,11 +80,11 @@ function displayRecipes (responseJSON) {
   $('#recipe-list').empty();
   const { hits } = responseJSON;
   if (hits.length === 0) {
-    $('#recipe-list').html(`<ul><li>No results found</li></ul>`);
+    $('#recipe-list').html(`<li>No results found</li>`);
     $('.results').css('display','block');
   } else {
-    const resultsList = createRecipeList(hits).join('<br>');
-    $('#recipe-list').html(`<ul>${resultsList}</ul>`);
+    const resultsList = createRecipeList(hits).join('');
+    $('#recipe-list').html(`${resultsList}`);
     $('.results').css('display','block');
 
   }
@@ -94,8 +94,8 @@ function createArticleList (responses) {
    return responses.map(response => `
     <li>
       <a href="${response.web_url}" target="_blank">${response.headline.main}</a>
-      <p>${response.headline.kicker || ''}</p>
-      <p>${response.byline.original || ''}</p>
+      <p class="kicker">${response.headline.kicker || ''}</p>
+      <p class="byline">${response.byline.original || ''}</p>
       <p>${response.abstract || ''}</p>
     </li>`
   );
@@ -106,11 +106,11 @@ function displayArticles (responseJSON) {
   const { docs } = responseJSON.response;
   if (docs.length === 0) {
 
-    $('#article-list').html(`<ul><li>No results found</li></ul>`);
+    $('#article-list').html(`<li>No results found</li>`);
     $('.results').css('display','block');
   } else {
-    const resultsList = createArticleList(docs).join('<br>');
-    $('#article-list').html(`<ul>${resultsList}</ul>`);
+    const resultsList = createArticleList(docs).join('');
+    $('#article-list').html(`${resultsList}`);
     $('.results').css('display','block');
 
   }
@@ -119,6 +119,7 @@ function displayArticles (responseJSON) {
 function createVideoElement (videoId) {
  return ` 
   <iframe id="video-iframe"
+    title="Food Video"
     src="https://www.youtube.com/embed/${videoId}"
     frameborder="0"></iframe>
   `;
