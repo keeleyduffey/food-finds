@@ -10,63 +10,60 @@
     
   </head>
   <body>
-    <!-- <div class="container"> -->
-      <section class="intro-container">
-        <div class="search-wrapper">
-          <header>
-            <h1>Food <br> Finds</h1>
-          </header>
-         
-          <form id="js-form">
-            <div class="input-wrapper">
-              <label for="js-food-input">Search for a food or recipe</label>
-              <input type="text" name="js-food-input" id="js-food-input" placeholder="e.g., Pad Thai" required>
-            </div>
-            <div class="input-wrapper">
-              <label for="js-max-results">Number of Recipes</label>
-              <input type="number" name="js-max-results" id="js-max-results" value="3" required >
-            </div>
-            <button type="submit">Submit</button>
-          </form>
+    <div class="intro-container">
+      <section class="search-wrapper">
+        <header role="banner">
+          <h1>Food <br> Finds</h1>
+        </header>
+       
+        <form id="js-form" role="form">
+          <div class="input-wrapper">
+            <label for="js-food-input">Search for a food or recipe</label>
+            <input type="text" name="js-food-input" id="js-food-input" placeholder="e.g., Pad Thai" required>
+          </div>
+          <div class="input-wrapper">
+            <label for="js-max-results">Number of Recipes</label>
+            <input type="number" name="js-max-results" id="js-max-results" value="3" required >
+          </div>
+          <button type="submit">Submit</button>
+        </form>
+      </section>
+      
+
+      <section class="how-it-works-wrapper">
+        <h2><span class="blue">How</span><br><span class="light-blue">it</span><br><span class="darkest-blue">works</span></h2>
+        <p> Search for a food and receive a random video, your specified number of recipes and up to 10 relevant New York Times articles</p>
+        <br>
+        <br>
+
+        <p class="small">* Note, if you search for something like "curry" you may receive NY Times articles about basketball, not food</p>
+      </section>
+    </div>
+
+
+    <main role="main" class="results">
+      <div>
+        <h3>Enjoy a random video about your food: </h3>
+        <div id="video-container"></div>
+      </div>
+      <div class="lists-wrapper">
+        <div class="results-list recipes">
+          <h3>Recipes</h3>
+          <ul id="recipe-list"></ul>
+        </div>
+        <div class="results-list articles">
+          <h3>New York Times Articles</h3>
+          <ul id="article-list"></ul>
         </div>
         
+      </div>
+      <button type="button" class="scroll-button">Search again?</button>
 
-        <div class="how-it-works-wrapper">
-          <h2><span class="blue">How</span><br><span class="light-blue">it</span><br><span class="darkest-blue">works</span></h2>
-          <p> Search for a food and receive a random video, your specified number of recipes and up to 10 relevant New York Times articles</p>
-          <br>
-          <br>
+    </main>
 
-          <p class="small">* Note, if you search for something like "curry" you may receive NY Times articles about basketball, not food</p>
-        </div>
-      </section>
-
-
-      <section class="results">
-        <div>
-          <h3>Enjoy a random video about your food: </h3>
-          <div id="video-container"></div>
-        </div>
-        <div class="lists-wrapper">
-          <div class="results-list recipes">
-            <h3>Recipes</h3>
-            <ul id="recipe-list"></ul>
-          </div>
-          <div class="results-list articles">
-            <h3>New York Times Articles</h3>
-            <ul id="article-list"></ul>
-          </div>
-          
-        </div>
-        <button type="button" class="scroll-button">Search again?</button>
-        <p id="js-error-message" class="error-message"></p>
-      </section>
-
-      <footer>
-        <div id="edamam-badge" data-color="white"></div>
-      </footer>
-      
-    <!-- </div> -->
+    <footer role="contentinfo">
+      <div id="edamam-badge" data-color="white"></div>
+    </footer>
     
     <script
       src="https://code.jquery.com/jquery-3.4.1.js"
