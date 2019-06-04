@@ -56,14 +56,65 @@ body {
 	font-family: sans-serif;
 }
 
-h1 {
-	font-size: 36px;
+h1, h2, h3 {
+	margin: 8vh auto;
+	text-transform: uppercase;
 }
 
-.container {
-	text-align: center;
-	padding: 50px;
+h1 {
+	font-size: 42px;
+	line-height: 56px;
 }
+
+h2 {
+	font-size: 34px;
+	line-height: 48px;
+}
+
+h3 {
+	font-size: 28px;
+	border-bottom: 2px solid #505F90;
+  padding: 15px;
+  margin: 3vh auto;
+}
+
+
+.container {
+	/*text-align: center;*/
+	/*padding: 50px;*/
+}
+
+.intro-container {
+	height: 100vh;
+	display: flex;
+	flex-direction: column;
+}
+
+.how-it-works-wrapper {
+	padding: 12vh 10vw;
+	font-size: 28px;
+	color: #07123A;
+	background: #aebef0;
+}
+
+.search-wrapper {
+	padding-top: 12vh;
+	color: #fff;
+	background: #07123A;
+	text-align: center;
+}
+
+.how-it-works-wrapper p {
+	line-height: 40px;
+}
+
+/*.color-primary-0 { color: #2F3F73 }	
+.color-primary-1 { color: #7A86AD }
+.color-primary-2 { color: #505F90 }
+.color-primary-3 { color: #172556 }
+.color-primary-4 { color: #07123A }
+light blue aebef0
+*/
 
 form {
 	width: 100%;
@@ -74,20 +125,53 @@ form {
 iframe {
 	height: 240px;
 	width: 420px;
+
+}
+
+.input-wrapper,
+button {
+	margin: 3vh auto;
+}
+
+button {
+	cursor: pointer;
+	background: #fff;
+	padding: 10px 25px;
+	border: 3px solid #aebef0;
+	color: #07123A;
+	text-transform: uppercase;
+}
+
+button:hover,
+button:active,
+button:focus {
+	background: #505F90;
+	color: #fff;
 }
 
 .input-wrapper label {
 	display: block;
+	font-size: 20px;
+	padding: 10px 0;
 }
 
 .results {
 	display: none;
-	margin: 50px auto;
+	margin: 0 auto;
+	text-align: center;
+	background: #2F3F73;
+	color: #fff;
+	padding: 60px;
+}
+
+.video-container {
+	margin: 5vh 0;
 }
 
 .lists-wrapper {
 	display: flex;
 	flex-direction: column;
+	margin: 5vh 0;
 }
 
 .results-list {
@@ -96,10 +180,29 @@ iframe {
 
 .results-list a {
 	display: block;
+	color: #fff;
+	font-size: 24px;
+	text-decoration: none;
+	margin: 10px 0;
+}
+
+.results-list a:hover,
+.results-list a:active,
+.results-list a:focus {
+	color: #7A86AD;
+}
+
+.results-list img {
+	padding: 25px;
 }
 
 #article-list {
 	text-align: left;
+}
+
+#article-list li {
+	border-bottom: 1px dotted #fff;
+	padding-bottom: 25px;
 }
 
 #edamam-badge {
@@ -108,15 +211,16 @@ iframe {
 
 
 @media screen and (min-width: 850px) {
+	.intro-container,
 	.lists-wrapper {
 		flex-direction: row;
 	}
 
-	#recipe-list {
-		width: 40%;
+	.results-list.recipes {
+		width: 45%;
 	}
 
-	#article-list {
+	.results-list.articles {
 		text-align: left;
 		width: 55%;
 	}
@@ -128,10 +232,15 @@ iframe {
 
 	.input-wrapper,
 	button {
-		display: inline-block;
+		/*display: inline-block;*/
 	}
 
 	.input-wrapper label {
-		text-align: left;
+		/*text-align: left;*/
+	}
+
+	.search-wrapper,
+	.how-it-works-wrapper {
+		width: 50%;
 	}
 }

@@ -9,36 +9,53 @@
     
   </head>
   <body>
-    <div class="container">
-      <h1>Recipe Finder</h1>
-      <form id="js-form">
-        <div class="input-wrapper">
-          <label for="food-input">Search for a food or recipe</label>
-          <input type="text" name="food-input" id="js-food-input" placeholder="e.g., Pad Thai" required>
+    <!-- <div class="container"> -->
+      <section class="intro-container">
+        <div class="search-wrapper">
+          <h1>Inspi- <br> Recipe</h1>
+          <form id="js-form">
+            <div class="input-wrapper">
+              <label for="food-input">Search for a food or recipe</label>
+              <input type="text" name="food-input" id="js-food-input" placeholder="e.g., Pad Thai" required>
+            </div>
+            <div class="input-wrapper">
+              <label for="max-results">Maximum Recipe Options</label>
+              <input type="number" name="max-results" id="js-max-results" value="3" required >
+            </div>
+            <button type="submit">Submit</button>
+          </form>
         </div>
-        <div class="input-wrapper">
-          <label for="max-results">Maximum Recipe Options</label>
-          <input type="number" name="max-results" id="js-max-results" value="3" required >
-        </div>
-        <button type="submit">Submit</button>
-      </form>
+        
 
-      <div>
-        <h2>How it works:</h2>
-        <p> Type a food or recipe name and receive a video, recipe options and a list of relevant New York Times articles</p>
-      </div>
+        <div class="how-it-works-wrapper">
+          <h2>How <br> it <br> works</h2>
+          <p> Search for a food or recipe and receive a video, recipe options and a list of relevant New York Times articles</p>
+        </div>
+      </section>
+
 
       <section class="results">
         <div id="video-container"></div>
         <div class="lists-wrapper">
-          <ul id="recipe-list" class="results-list"></ul>
-          <ul id="article-list" class="results-list"></ul>
+          <div class="results-list recipes">
+            <h3>Recipes</h3>
+            <ul id="recipe-list"></ul>
+          </div>
+          <div class="results-list articles">
+            <h3>New York Times Articles</h3>
+            <ul id="article-list"></ul>
+          </div>
+          
         </div>
         <button type="button" class="scroll-button">Search again?</button>
         <p id="js-error-message" class="error-message"></p>
       </section>
-      <div id="edamam-badge" data-color="white"></div>
-    </div>
+
+      <footer>
+        <div id="edamam-badge" data-color="white"></div>
+      </footer>
+      
+    <!-- </div> -->
     
     <script
       src="https://code.jquery.com/jquery-3.4.1.js"

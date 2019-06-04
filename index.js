@@ -61,6 +61,8 @@ function getResults (foodToFind, maxResults) {
   const recipes = formatRecipeRequest(foodToFind, maxResults),
     articles = formatArticleRequest(foodToFind),
     video = formatVideoRequest(foodToFind);
+
+  $("html, body").animate({ scrollTop: 1000 }, "slow");
 }
 
 
@@ -68,8 +70,9 @@ function createRecipeList (responses) {
   console.log(responses);
   return responses.map(response => `
     <li>
-      <a href="${response.recipe.url}">${response.recipe.label}</a>
-      <img src="${response.recipe.image}" />
+      <a href="${response.recipe.url}" target="_blank">${response.recipe.label}
+        <img src="${response.recipe.image}" />
+      </a>
     </li>`
   );
 }
@@ -90,7 +93,7 @@ function displayRecipes (responseJSON) {
 function createArticleList (responses) {
    return responses.map(response => `
     <li>
-      <a href="${response.web_url}">${response.headline.main}</a>
+      <a href="${response.web_url}" target="_blank">${response.headline.main}</a>
       <p>${response.headline.kicker ? response.headline.kicker : ''}</p>
       <p>${response.abstract}</p>
     </li>`
@@ -158,6 +161,8 @@ function scrollToTop () {
   $('.scroll-button').on('click', (event) => {
     event.preventDefault();
     $("html, body").animate({ scrollTop: 0 }, "slow");
+    $('#js-food-input').empty();
+    $('#js-max-results').empty();
     
   })
 }
