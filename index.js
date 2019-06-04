@@ -8,7 +8,7 @@ const articleApiKey = '2sPn8MHXGMHtWsLCmSNlWVnTnnXIGTPO';
 const videoSearchURL = 'https://www.googleapis.com/youtube/v3/search';
 const videoApiKey = 'AIzaSyBOyBKYZHI6Bebu0jdI2RCcNR0Hf5TaRLY';
 
-function formatQueryParams(params) {
+function formatQueryParams (params) {
   const queryItems = Object.keys(params)
     .map(key => `${encodeURIComponent(key)}=${encodeURIComponent(params[key])}`)
   
@@ -38,8 +38,8 @@ function formatRecipeRequest (foodToFind, maxResults) {
 function formatArticleRequest (foodToFind) {
   const params = {
     q: foodToFind,
-    section_name: 'Food Dining and Wine Dining & Wine',
-    news_desk: 'Food Dining',
+    section_name: 'Food',
+    news_desk: 'Food',
     'api-key': articleApiKey,
   };
   

@@ -107,10 +107,6 @@ h3 {
 	line-height: 40px;
 }
 
-.how-it-works-wrapper p.small{
-	line-height: 25px;
-}
-
 .blue {
 	color: #2F3F73
 }
@@ -218,10 +214,6 @@ button:focus {
 
 #edamam-badge {
 	margin: 20px auto;
-}
-
-.small {
-	font-size: 65%;
 }
 
 .kicker {
