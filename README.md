@@ -1,4 +1,4 @@
-# recipe-finder
+# food-finds
 App that lets users search for a food and receive recipes, articles and a video 
 
 ## View Live
