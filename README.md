@@ -2,7 +2,7 @@
 App that lets users search for a food and receive recipes, articles and a video 
 
 ## View Live
-https://keeleyduffey.github.io/recipe-finder/
+https://keeleyduffey.github.io/food-finds/
 
 Search Input + Description
 ![search-and-how-it-works](screenshots/search.png)
