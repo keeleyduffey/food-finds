@@ -146,8 +146,8 @@ function displayVideo (responseJSON) {
 function submitForm() {
   $('form').submit(event => {
     event.preventDefault();
-    const $foodToFind = $('#js-food-input').val(),
-      $maxResults = $('#js-max-results').val();
+    const $foodToFind = $('#js-food-input').val();
+    const $maxResults = $('#js-max-results').val();
     getResults($foodToFind, $maxResults);
   });
 }

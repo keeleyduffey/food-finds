@@ -7,11 +7,11 @@ https://keeleyduffey.github.io/recipe-finder/
 Search Input + Description
 ![search-and-how-it-works](screenshots/search.png)
 
-Results
+Results Page
 ![results](screenshots/results.png)
 
 ## Summary  
-Food Finds allows users to search for a food or recipe and receive a specified number of recipes, up to 10 New York Times articles and a random YouTube video related to the food.
+Food Finds allows users to search for a food or recipe and receive a specified number of recipes, up to 10 New York Times articles and a random YouTube video related to the food. All recipes and articles are linked so users can visit their source sites.
 
 ## Technologies Used 
 * HTML5 / CSS / JavaScript / jQuery
