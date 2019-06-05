@@ -62,13 +62,17 @@ function formatVideoRequest (foodToFind) {
   fetchRequest(params, videoSearchURL, displayVideo);
 }
 
+function scrollTo (top) {
+  $("html, body").animate({ scrollTop: top }, "slow");
+}
+
 function getResults (foodToFind, maxResults) {
   if (maxResults > 50) maxResults = 50;
   const recipes = formatRecipeRequest(foodToFind, maxResults);
   const articles = formatArticleRequest(foodToFind);
   const video = formatVideoRequest(foodToFind);
   
-  $('html, body').animate({ scrollTop: 1000 }, 'slow');
+  scrollTo(900);
 }
 
 function createRecipeList (responses) {
@@ -97,7 +101,7 @@ function displayRecipes (responseJSON) {
 }
 
 function createArticleList (responses) {
-   return responses.map(response => `
+  return responses.map(response => `
     <li>
       <a href="${response.web_url}" target="_blank">${response.headline.main}</a>
       <p class="kicker">${response.headline.kicker || ''}</p>
@@ -153,14 +157,10 @@ function submitForm() {
   });
 }
 
-function scrollToTop () {
-  $("html, body").animate({ scrollTop: 0 }, "slow");
-}
-
 function resetForm () {
   $('.scroll-button').on('click', (event) => {
     event.preventDefault();
-    scrollToTop();
+    scrollTo(0);
     $('#js-food-input').val('');
     $('#js-max-results').val(3);
   })
