@@ -130,6 +130,10 @@ iframe {
 	width: 300px;
 }
 
+input {
+	width: 215px;
+}
+
 .input-wrapper,
 button {
 	margin: 3vh auto;
@@ -200,6 +204,11 @@ button:focus {
 .results-list img {
 	padding: 25px;
 	width: 300px;
+}
+
+#recipe-list {
+	max-height: 2000px;
+  overflow: scroll;
 }
 
 #article-list {
