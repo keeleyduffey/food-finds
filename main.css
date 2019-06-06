@@ -75,9 +75,9 @@ h2 {
 
 h3 {
 	font-size: 32px;
-	border-bottom: 2px solid #505F90;
-  padding: 15px;
-  margin: 3vh auto;
+  border-bottom: 2px solid #505F90;
+  padding: 4vh 15px;
+  margin: 0 auto 30px;
   text-transform: uppercase;
   line-height: 40px;
 }

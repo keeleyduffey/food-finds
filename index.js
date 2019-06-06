@@ -67,7 +67,6 @@ function scrollTo (top) {
 }
 
 function getResults (foodToFind, maxResults) {
-  if (maxResults > 50) maxResults = 50;
   const recipes = formatRecipeRequest(foodToFind, maxResults);
   const articles = formatArticleRequest(foodToFind);
   const video = formatVideoRequest(foodToFind);
